@@ -40,12 +40,7 @@ restrictInputLength(inputDay, 2);
 restrictInputLength(inputMonth, 2);
 restrictInputLength(inputYear, 4);
 
-let billValue
-// Ajouter un écouteur d'événement keyup à l'élément inputDay qui recupère la valeur inscrit en temps réel
-inputDay.addEventListener('keyup', (event) => {
-    billValue = Number(inputDay.value);
-    console.log(billValue)
-});
+
 
 
 
@@ -65,3 +60,37 @@ const dateObj = {
 };
 
 console.log(dateObj);
+
+/* MAIN SECTION - MAIN SECTION - MAIN SECTION - MAIN SECTION*/
+
+let dayValue = 0
+let monthValue = 0
+let yearValue = 0
+
+// Ajouter un écouteur d'événement keyup à l'élément inputDay qui recupère la valeur inscrit en temps réel
+inputDay.addEventListener('keyup', (event) => {
+  dayValue = Number(inputDay.value);
+  console.log(dayValue)
+});
+
+inputMonth.addEventListener('keyup', (event) => {
+  monthValue = Number(inputMonth.value);
+  console.log(monthValue)
+});
+
+inputYear.addEventListener('keyup', (event) => {
+  yearValue = Number(inputYear.value);
+  console.log(yearValue)
+});
+
+btnValidate.addEventListener("click", (event) => {
+  let Age = {
+    day : dateObj.jour - dayValue,
+    month : dateObj.mois - monthValue,
+    year : dateObj.annee - yearValue,
+  }
+
+  resultDay.textContent = Age.day
+  resultMonth.textContent = Age.month
+  resultYear.textContent = Age.year
+})

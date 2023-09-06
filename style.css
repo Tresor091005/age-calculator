@@ -3,11 +3,22 @@
 :root {
     --primary-color : hsl(259, 100%, 65%);
     --secondary-color : hsl(0, 0%, 8%);
-    --bg-color: hsl(0, 0%, 94%)
+    --bg-color: hsl(0, 0%, 94%);
+    --warning-color: hsl(0, 100%, 67%);
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+div[class^="warning-"] {
+    margin-top: 5px;
+    color: var(--warning-color);
+    font-size: 0.4rem;
+}
+
+.hidden {
+    display: none;
 }
 
 
