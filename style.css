@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root {
+    --primary-color : hsl(259, 100%, 65%);
+    --secondary-color : hsl(0, 0%, 8%);
+    --bg-color: hsl(0, 0%, 94%)
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: var(--bg-color);
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px 20px 20% 20px;
+}
+
+.information {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.title {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: hsl(0, 1%, 44%);
+}
+
+.input {
+    width: 70px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+
+.input::placeholder {
+    opacity: 0.8;
+}
+.separate {
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+hr {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    top: 50%;
+    border-radius: 50%;
+}
+
+img {
+    display: block;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 12px;
+
+    position: relative;
+    top: 4%;
+    left: 40%;
+}
+
+.result {
+    margin-top: 10px;
+}
+
+span[class^="result"] {
+    color: var(--primary-color);
+}
+
+@media screen and (min-width: 900px) {
+    
+}
