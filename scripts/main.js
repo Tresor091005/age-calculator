@@ -55,45 +55,20 @@ function isValid(value, startValue, endValue) {
     }
 }
 
-//  msg jour non valide
-function warningDayNotValid() {
-    const warning_1 = document.querySelector(".warning-1")
-    warning_1.classList.remove("hidden")
-    warning_1.textContent = "Must be a valid day"
+
+//  msg non valide
+function warningNotValid(selector, message) {
+    const warning = document.querySelector(selector)
+    warning.classList.remove("hidden")
+    warning.textContent = message
 }
  
 // supprime msg jour non valide
-function removeDayWarning() {
-    const warning_1 = document.querySelector(".warning-1")
-    warning_1.classList.add("hidden")
-}
-
-// msg mois non valide
-function warningMonthNotValid() {
-    const warning_2 = document.querySelector(".warning-2")
-    warning_2.classList.remove("hidden")
-    warning_2.textContent = "Must be a valid month"
+function removeWarning(selector) {
+    const warning = document.querySelector(selector)
+    warning.classList.add("hidden")
 }
  
-// supprime msg mois non valide
-function removeMonthWarning() {
-    const warning_2 = document.querySelector(".warning-2")
-    warning_2.classList.add("hidden")
-}
-
-// msg année non valide
-function warningYearNotValid() {
-    const warning_3 = document.querySelector(".warning-3")
-    warning_3.classList.remove("hidden")
-    warning_3.textContent = "Must be in the past"
-}
- 
-// supprime msg année non valide
-function removeYearWarning() {
-    const warning_3 = document.querySelector(".warning-3")
-    warning_3.classList.add("hidden")
-}
-  
 // msg remplir les sections
 function warningRequired() {
     warn.forEach(warning => {
@@ -103,7 +78,7 @@ function warningRequired() {
 }
    
 // supprimer tous les msg
-function removeWarning() {
+function removeWarnings() {
     warn.forEach( warning => {
       warning.classList.add("hidden")
     })
@@ -138,28 +113,28 @@ restrictInputLength(inputYear, 4)
 // s'assurer de la plausibilité des entrées
 inputDay.addEventListener('keyup', (event) => {
     if (isValid(Number(inputDay.value), 1, 31)) {
-        removeDayWarning()
+        removeWarning(".warning-1")
         dayValue = Number(inputDay.value)
     } else {
-        warningDayNotValid()
+        warningNotValid(".warning-1", "Must be a valid day")
     }
 })
 
 inputMonth.addEventListener('keyup', (event) => {
     if (isValid(Number(inputMonth.value), 1, 12)) {
-        removeMonthWarning()
+        removeWarning(".warning-2")
         monthValue = Number(inputMonth.value)    
     } else {
-        warningMonthNotValid()
+        warningNotValid(".warning-2", "Must be a valid month")
     }
 })
 
 inputYear.addEventListener('keyup', (event) => {
     if (Number(inputYear.value) <= 2023) {
-        removeYearWarning()
+        removeWarning(".warning-3")
         yearValue = Number(inputYear.value)
     } else {
-        warningYearNotValid()
+        warningNotValid(".warning-3", "Must be in the past")
     }
 })
 
