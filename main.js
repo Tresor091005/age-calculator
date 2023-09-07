@@ -118,6 +118,13 @@ function isInformationValid() {
     return (one && two && three)
 }
 
+function shake(element) {
+    element.classList.add("shake-horizontal")
+
+    setTimeout(() => {
+        element.classList.remove("shake-horizontal");
+    }, 700); 
+}
 /* Main */
 
 // initialiser les données de la page
@@ -141,7 +148,7 @@ inputDay.addEventListener('keyup', (event) => {
 inputMonth.addEventListener('keyup', (event) => {
     if (isValid(Number(inputMonth.value), 1, 12)) {
         removeMonthWarning()
-        monthValue = Number(inputMonth.value)
+        monthValue = Number(inputMonth.value)    
     } else {
         warningMonthNotValid()
     }
@@ -150,7 +157,7 @@ inputMonth.addEventListener('keyup', (event) => {
 inputYear.addEventListener('keyup', (event) => {
     if (Number(inputYear.value) <= 2023) {
         removeYearWarning()
-        yearValue = Number(inputYear.value);
+        yearValue = Number(inputYear.value)
     } else {
         warningYearNotValid()
     }
@@ -159,12 +166,10 @@ inputYear.addEventListener('keyup', (event) => {
 // afficher les résultats si entrées plausibe 
 btnValidate.addEventListener("click", (event) => {
     if (dayValue === 0 && monthValue === 0 && yearValue === 0) {
-        event.preventDefault();  // juger de la pertinence !
+        shake(btnValidate)
         warningRequired()
     } else if (!isInformationValid()) {
-        event.preventDefault()  // juger de la pertinence !
-        console.log("not Valid")
-        // penser à une petite animation CSS
+        shake(btnValidate)
     } else {
         let age = {
             day : dateObj.jour - dayValue,

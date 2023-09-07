@@ -16,7 +16,7 @@ d'abord récuprer les éléments tapés dans un objet FAITFAITFAITFAITFAIT
 
 récuperer la date local en jour / mois et année dans un objet  FAITFAITFAITFAITFAIT
 
-vérifizer l'exactitude des données (sinon console.log("warn") 
+vérifier l'exactitude des données (sinon console.log("warn") 
 
 afficher le résultat
 
