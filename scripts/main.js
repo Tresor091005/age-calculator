@@ -130,7 +130,7 @@ inputMonth.addEventListener('keyup', (event) => {
 })
 
 inputYear.addEventListener('keyup', (event) => {
-    if (Number(inputYear.value) <= 2023) {
+    if (Number(inputYear.value) <= 2024) {
         removeWarning(".warning-3")
         yearValue = Number(inputYear.value)
     } else {
